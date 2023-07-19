@@ -1,0 +1,11 @@
+#translate {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  margin: auto;
+  width: 100px;
+  height: 30px;
+  background: #f36;
+}

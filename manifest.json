@@ -1,0 +1,57 @@
+{
+  "name": "翻译小组手",
+  "author": "xie392",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "description": "由于谷歌翻译退出中国，翻译小组手应运而生",
+  "icons": {
+    "16": "img/ico-logo.png",
+    "48": "img/ico-logo.png",
+    "128": "img/ico-logo.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "翻译小组手",
+    "default_icon": {
+      "16": "img/ico-logo.png",
+      "48": "img/ico-logo.png",
+      "128": "img/ico-logo.png"
+    }
+  },
+  "host_permissions": [
+    "http://*/",
+    "https://*/"
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "webRequest",
+    "storage",
+    "notifications",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://fanyi.youdao.com/*"
+      ],
+      "js": [
+        "js/youdao.js"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/all.js"
+      ],
+      "css": [
+        "css/all.css"
+      ]
+    }
+  ]
+}
